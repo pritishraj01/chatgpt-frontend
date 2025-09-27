@@ -3,13 +3,11 @@ import { use, useState } from 'react'
 import { useEffect } from 'react'
 import { createContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import dotenv from "dotenv"
-dotenv.config()
 
 export const dataContext = createContext()
 
 function UserContext({ children }) {
-  const serverUrl = process.env.BACKEND_URL
+  const serverUrl = import.meta.env.BACKEND_URL
   let navigate = useNavigate()
   let [userData, setUserData] = useState({})
   let [prompt, setPrompt] = useState("")
