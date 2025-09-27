@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 export const dataContext = createContext()
 
 function UserContext({ children }) {
-  const serverUrl = import.meta.env.BACKEND_URL
+  const serverUrl = import.meta.env.VITE_BACKEND_URL
   let navigate = useNavigate()
   let [userData, setUserData] = useState({})
   let [prompt, setPrompt] = useState("")
